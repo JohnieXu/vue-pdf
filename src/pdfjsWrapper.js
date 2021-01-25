@@ -22,8 +22,10 @@ export default function(PDFJS) {
 		else
 			throw new TypeError('invalid src type');
 
-		source.cMapUrl = options.cMapUrl;
-		source.cMapPacked = options.cMapPacked;
+		if (options) {
+			source.cMapUrl = options.cMapUrl;
+			source.cMapPacked = options.cMapPacked;
+		}
 
 		// source.verbosity = PDFJS.VerbosityLevel.INFOS;
 		// source.pdfBug = true;
